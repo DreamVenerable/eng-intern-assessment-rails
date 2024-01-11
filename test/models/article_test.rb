@@ -59,14 +59,14 @@ RSpec.describe Article, type: :model do
   end
 
   describe 'searching for articles' do
-    xit 'returns accurate search results' do
+    it 'returns accurate search results' do
       article1 = Article.create(title: 'Sample Article', content: 'Lorem ipsum dolor sit amet.')
       article2 = Article.create(title: 'Another Article', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
       results = Article.search('Lorem ipsum')
       expect(results).to include(article1, article2)
     end
 
-    xit 'displays relevant articles in search results' do
+    it 'displays relevant articles in search results' do
       article1 = Article.create(title: 'Sample Article', content: 'Lorem ipsum dolor sit amet.')
       article2 = Article.create(title: 'Another Article', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
       results = Article.search('Another')
