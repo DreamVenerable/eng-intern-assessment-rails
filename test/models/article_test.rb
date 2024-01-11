@@ -45,13 +45,13 @@ RSpec.describe Article, type: :model do
   end
 
   describe 'deleting articles' do
-    xit 'deletes an article' do
+    it 'deletes an article' do
       article = Article.create(title: 'Sample Article', content: 'Lorem ipsum dolor sit amet.')
       article.destroy
       expect(Article.count).to eq(0)
     end
 
-    xit 'prevents access to deleted articles' do
+    it 'prevents access to deleted articles' do
       article = Article.create(title: 'Sample Article', content: 'Lorem ipsum dolor sit amet.')
       article.destroy
       expect { Article.find(article.id) }.to raise_error(ActiveRecord::RecordNotFound)
