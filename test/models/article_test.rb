@@ -30,13 +30,13 @@ RSpec.describe Article, type: :model do
   end
 
   describe 'editing and updating articles' do
-    xit 'edits an existing article' do
+    it 'edits an existing article' do
       article = Article.create(title: 'Sample Article', content: 'Lorem ipsum dolor sit amet.')
       article.update(content: 'Updated content')
       expect(article.content).to eq('Updated content')
     end
 
-    xit 'updates the article metadata' do
+    it 'updates the article metadata' do
       article = Article.create(title: 'Sample Article', content: 'Lorem ipsum dolor sit amet.', author: 'John Doe', date: Date.today)
       article.update(author: 'Jane Smith', date: Date.yesterday)
       expect(article.author).to eq('Jane Smith')
